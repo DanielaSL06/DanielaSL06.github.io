@@ -1,0 +1,63 @@
+#skills {
+  background-color: $white-color;
+  color: $dark-blue-text;
+  margin-top: -10rem;
+  padding-top: 15rem;
+  padding-bottom: 3rem;
+
+  @include respond(tab-land) {
+    margin-top: 0;
+    padding-top: 5rem;
+  }
+
+  .skills-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2.4rem 5rem;
+      margin-top: 3.5rem;
+
+      @include respond(phone) {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .skill {
+      &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        font-weight: 700;
+        font-size: 1.6rem;
+        color: $dark-blue-text;
+        margin-bottom: 0.7rem;
+      }
+
+      &__pct {
+        color: $primary-color;
+        font-weight: 700;
+      }
+
+      &__bar {
+        height: 1rem;
+        background-color: #e4e9f0;
+        border-radius: 10rem;
+        overflow: hidden;
+      }
+
+      &__fill {
+        height: 100%;
+        border-radius: 10rem;
+        background-image: linear-gradient(
+          90deg,
+          $primary-color 0%,
+          $secondary-color 100%
+        );
+      }
+    }
+  }
+}
